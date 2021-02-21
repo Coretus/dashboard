@@ -1,0 +1,16 @@
+<h1 class="text-center my-5">Bienvenido {{user.username}}</h1>
+
+{{#each servidores}}
+<div class="card" style="width: 18rem;">
+  <img src="{{this.icon}}" class="card-img-top" alt="{{this.icon}}">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    {{#if this.esta}}
+    <a href="/dash/{{this.id}}" class="btn btn-primary">Iniciar</a>
+    {{ else }}
+    <a href="https://discord.com/api/oauth2/authorize?client_id=770104691760955442&permissions=0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Flogin&scope=bot" class="btn btn-info">Invitar</a>
+    {{/if}}
+
+  </div>
+</div>
+{{/each}}
